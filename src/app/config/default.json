@@ -1,0 +1,4 @@
+{
+  "mongo_url": "mongodb://172.17.0.4:27017/iguatemi",
+  "server_port": 4000
+}
