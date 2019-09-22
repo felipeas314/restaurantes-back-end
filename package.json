@@ -1,0 +1,20 @@
+{
+  "name": "zeus-back-end",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.4.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1",
+    "multer": "^1.4.2",
+    "yup": "^0.27.0"
+  }
+}
