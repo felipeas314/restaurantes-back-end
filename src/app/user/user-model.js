@@ -5,9 +5,10 @@ const User = database.define(
   'user',
   {
     name: { type: sequelize.STRING },
+    email: { type: sequelize.STRING },
     password: { type: sequelize.STRING },
   },
-  { tableName: 'user' },
+  { tableName: 'users' },
 );
 
 exports.User = User;
