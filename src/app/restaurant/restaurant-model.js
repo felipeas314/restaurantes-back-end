@@ -1,14 +1,17 @@
-const mongoose = require('mongoose');
+const sequelize = require('sequelize');
+const database = require('../database/postgresql');
 
-const { Schema } = mongoose;
-
-const restaurantSchema = new Schema({
-  name: {
-    type: String,
-    require: true,
+const Restaurant = database.define(
+  'restaurant',
+  {
+    name: { type: sequelize.STRING },
+    cnpj: { type: sequelize.STRING },
+    number: { type: sequelize.STRING },
+    street: { type: sequelize.STRING },
+    city: { type: sequelize.STRING },
+    state: { type: sequelize.STRING },
   },
-});
+  { tableName: 'restaurants' },
+);
 
-const restaurant = mongoose.model('restaurant', restaurantSchema);
-
-exports.restaurant = restaurant;
+exports.Restaurant = Restaurant;
