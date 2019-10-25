@@ -6,11 +6,15 @@ const userController = require('./app/user/user-controller');
 const authController = require('./app/auth/auth-controller');
 const restaurantController = require('./app/restaurant/restaurant-controller');
 
+const tokenVerify = require('./app/middleware/token-verify');
+
 route.get('/health', (req, res) => {
   res.json({ msg: 'Server up' });
 });
 
 route.post('/login', authController.login);
+
+route.use(tokenVerify);
 
 route.get('/users', userController.index);
 route.get('/restaurants', restaurantController.index);

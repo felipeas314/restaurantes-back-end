@@ -16,7 +16,11 @@ async function login(req, res) {
     return;
   }
 
-  const token = jwt.sign({ id: user.id }, 'asdf');
+  const token = jwt.sign({ id: user.id }, 'segredo', {
+    expiresIn: '7d',
+  });
+
+  console.log(token);
 
   res.status(200).json({ token });
 }
