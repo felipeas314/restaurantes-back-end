@@ -10,6 +10,8 @@ const Restaurant = database.define(
     street: { type: sequelize.STRING },
     city: { type: sequelize.STRING },
     state: { type: sequelize.STRING },
+    email: { type: sequelize.STRING },
+    phone: { type: sequelize.STRING },
   },
   { tableName: 'restaurants' },
 );

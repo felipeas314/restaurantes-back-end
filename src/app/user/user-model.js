@@ -7,6 +7,7 @@ const User = database.define(
     name: { type: sequelize.STRING },
     email: { type: sequelize.STRING },
     password: { type: sequelize.STRING },
+    tipo_de_usuario: { type: sequelize.STRING },
   },
   { tableName: 'users' },
 );
