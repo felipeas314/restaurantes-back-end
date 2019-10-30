@@ -1,4 +1,8 @@
+const bcrypt = require('bcryptjs');
 const { Restaurant } = require('./restaurant-model');
+const { User } = require('../user/user-model');
+
+const salt = bcrypt.genSaltSync(8);
 
 async function index(req, res) {
   const restaurants = await Restaurant.findAll();
@@ -7,6 +11,16 @@ async function index(req, res) {
 
 async function create(req, res) {
   const restaurant = await Restaurant.create(req.body);
+  // despois de criar o restaurante tem que crair um usuário também para ele
+  const passwordHash = bcrypt.hashSync('123456', salt);
+  const user = new User({
+    name: 'Admin',
+    email: restaurant.email,
+    password: passwordHash,
+    tipo_de_usuario: 'MANAGER',
+    restaurant_id: restaurant.id,
+  });
+  user.save();
   res.status(202).json({ data: restaurant });
 }
 

@@ -16,7 +16,7 @@ async function login(req, res) {
     return;
   }
 
-  const token = jwt.sign({ id: user.id }, 'segredo', {
+  const token = jwt.sign({ user_id: user.id, restaurant_id: user.restaurant_id }, 'segredo', {
     expiresIn: '7d',
   });
 
