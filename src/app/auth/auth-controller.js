@@ -22,7 +22,7 @@ async function login(req, res) {
 
   console.log(token);
 
-  res.status(200).json({ token });
+  res.status(200).json({ token: token, user: user.name,role:user.tipo_de_usuario });
 }
 
 module.exports = {

@@ -5,6 +5,11 @@ async function index(req, res) {
   res.status(200).json({ data: products });
 }
 
+async function findByRestaurant(req, res) {
+  const products = await Product.findAll({ where: { restaurant_id: req.params.id } });
+  res.status(200).json({ data: products });
+}
+
 async function create(req, res) {
   const product = await Product.create({ ...req.body, restaurant_id: req.restaurant_id });
 
@@ -36,4 +41,5 @@ module.exports = {
   show,
   update,
   destroy,
+  findByRestaurant,
 };

@@ -24,6 +24,7 @@ route.get('/products', productController.index);
 
 route.get('/restaurants/:id', restaurantController.show);
 route.get('/products/:id', productController.show);
+route.get('/products/findbyrestaurant/:id', productController.findByRestaurant);
 
 route.post('/restaurants', restaurantController.create);
 route.post('/products', productController.create);

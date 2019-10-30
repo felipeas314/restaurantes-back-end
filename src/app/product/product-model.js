@@ -8,6 +8,7 @@ const Product = database.define(
     name: { type: sequelize.STRING },
     description: { type: sequelize.STRING },
     price: { type: sequelize.DECIMAL(10, 2) },
+    url_image: { type: sequelize.STRING }
   },
   { tableName: 'products' },
 );
